@@ -7,9 +7,9 @@ echo Opening She++ Documentation Guide...
 echo.
 
 REM Try to open markdown files or create HTML version
-if exist "SETUP_GUIDE.md" (
+if exist "..\docs\SETUP_GUIDE.md" (
     echo Opening SETUP_GUIDE.md
-    start notepad.exe SETUP_GUIDE.md
+    start notepad.exe ..\docs\SETUP_GUIDE.md
 ) else (
     echo Files not found. Running in project directory...
     cd /d "%~dp0"

@@ -46,13 +46,13 @@ echo [OK] Build successful
 
 echo.
 echo [3/3] Copying executable...
-if not exist "%SCRIPT_DIR%she.exe" (
-    echo [ERROR] she.exe not found
+if not exist "%SCRIPT_DIR%..\bin\she.exe" (
+    echo [ERROR] she.exe not found at %SCRIPT_DIR%..\bin\she.exe
     pause
     exit /b 1
 )
 
-copy /Y "%SCRIPT_DIR%she.exe" "%INSTALL_DIR%\she.exe"
+copy /Y "%SCRIPT_DIR%..\bin\she.exe" "%INSTALL_DIR%\she.exe"
 if %errorLevel% neq 0 (
     echo [ERROR] Failed to copy she.exe
     pause
@@ -67,7 +67,7 @@ echo ========================================
 echo.
 echo She++ installed at: %INSTALL_DIR%\she.exe
 echo.
-echo NEXT STEP: Add to PATH manually
+echo NEXT STEP: Add to PATH
 echo ========================================
 echo.
 echo To use 'she' command from anywhere, add to PATH:

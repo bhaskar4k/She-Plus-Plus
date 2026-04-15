@@ -27,15 +27,15 @@ Write-Host "Creating distribution package..." -ForegroundColor Cyan
 New-Item -ItemType Directory -Path "dist" | Out-Null
 
 # Copy executables and scripts
-Copy-Item "she.exe" "dist\she.exe"
+Copy-Item "..\bin\she.exe" "dist\she.exe"
 Copy-Item "install.bat" "dist\install.bat"
 Copy-Item "uninstall.bat" "dist\uninstall.bat"
 Copy-Item "install-ps.ps1" "dist\install-ps.ps1"
 Copy-Item "uninstall-ps.ps1" "dist\uninstall-ps.ps1"
 
 # Copy documentation
-Copy-Item "GETTING_STARTED.md" "dist\GETTING_STARTED.md"
-Copy-Item "README.md" "dist\README.md"
+Copy-Item "..\docs\GETTING_STARTED.md" "dist\GETTING_STARTED.md"
+Copy-Item "..\docs\README.md" "dist\README.md"
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Green

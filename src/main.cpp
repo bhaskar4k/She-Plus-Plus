@@ -3,9 +3,9 @@
 #include <sstream>
 #include <vector>
 
-#include "Lexer.h"
-#include "Parser.h"
-#include "Interpreter.h"
+#include "../include/Lexer.h"
+#include "../include/Parser.h"
+#include "../include/Interpreter.h"
 
 using namespace std;
 
@@ -18,7 +18,7 @@ bool HasSheExtension(const std::string& filename) {
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        cout << "Usage: she <file.she>\n";
+        cout << "Usage: she <filename.she> or she <filename>\n";
         return 1;
     }
 

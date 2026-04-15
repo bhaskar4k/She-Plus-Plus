@@ -1,4 +1,4 @@
-#include "Lexer.h"
+#include "../include/Lexer.h"
 #include <cctype>
 
 Lexer::Lexer(const std::string& s) : src(s) {}

@@ -1,4 +1,4 @@
-#include "Interpreter.h"
+#include "../include/Interpreter.h"
 #include <iostream>
 #include <stdexcept>
 using namespace std;

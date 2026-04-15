@@ -28,15 +28,15 @@ echo Creating distribution package...
 mkdir dist
 
 REM Copy executables and scripts
-copy she.exe dist\she.exe
+copy ..\bin\she.exe dist\she.exe
 copy install.bat dist\install.bat
 copy uninstall.bat dist\uninstall.bat
 copy install-ps.ps1 dist\install-ps.ps1
 copy uninstall-ps.ps1 dist\uninstall-ps.ps1
 
 REM Copy documentation
-copy GETTING_STARTED.md dist\GETTING_STARTED.md
-copy README.md dist\README.md
+copy ..\docs\GETTING_STARTED.md dist\GETTING_STARTED.md
+copy ..\docs\README.md dist\README.md
 
 echo.
 echo ========================================
