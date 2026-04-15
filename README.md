@@ -1,13 +1,18 @@
 # She-Plus-Plus
-Might Be Your Favourity She++. 
-A Language That Truly Understands You :)
+
+<h4>Might Be Your Favourity She++</h4>
+<h4>A Language That Really Understands You (And Me Too) ☹️</h4>
 
 # Build
 ```sh
-g++ main.cpp Lexer.cpp Parser.cpp Interpreter.cpp -o she
+build
 ```
 
-# Usage
+# Compile
 ```sh
 she <filename>.she
+
+or
+
+she <filename>
 ``` 
