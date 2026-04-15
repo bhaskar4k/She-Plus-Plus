@@ -18,7 +18,7 @@ bool HasSheExtension(const std::string& filename) {
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        cout << "Usage: she <filename.she> or she <filename>\n";
+        cout << "Version : v1.0\nUsage: she <filename.she> or she <filename>\n";
         return 1;
     }
 

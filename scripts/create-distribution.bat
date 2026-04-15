@@ -54,7 +54,7 @@ echo   - README.md (Project overview)
 echo   - SETUP_GUIDE.md (Setup instructions)
 echo.
 echo Next Steps:
-echo   1. Zip the dist folder: "She++-v1.0.zip"
+echo   1. Zip the dist folder: "She++ - v1.0.zip"
 echo   2. Share with users
 echo   3. Users extract and run install.bat
 echo.
