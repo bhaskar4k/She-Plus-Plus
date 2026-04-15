@@ -1,134 +1,58 @@
-# She++ - A Language That Really Understands You
+# She++ Programming Language
 
-<p align="center">
-  <i>Might Be Your Favorite She++</i><br>
-  <i>A Language That Really Understands You (And Me Too) ☹️</i>
-</p>
+A simple, friendly programming language created to make coding easier and more intuitive.
 
 ---
 
-## 👤 For Users
+## What is She++?
 
-**Just installed She++?** Start here: [GETTING_STARTED.md](GETTING_STARTED.md)
+She++ is a programming language with clean, easy-to-read syntax. Perfect for beginners and anyone who wants a more human-friendly way to write code.
 
-### Quick Start
+---
 
+## Quick Install
+
+### Step 1: Install Locally
 ```bash
-# Create a She++ file
-she yourfile.she
-
-# Or without extension
-she yourfile
+install.bat
 ```
 
-### Installation
-
-1. **Windows Command Prompt**
-   - Right-click `install.bat` → "Run as administrator"
-   - Close and reopen Command Prompt
-   - Test: `she examples\01_hello.she`
-
-2. **Windows PowerShell**
-   - Right-click PowerShell → "Run as administrator"
-   - Run: `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`
-   - Run: `.\install-ps.ps1`
-
-### Example Programs
-
-Check the examples in the documentation. Users can create their own programs by following the guides.
-
----
-
-## 👨‍💻 For Developers
-
-### Building
-
+### Step 2: Check Installation
+Then you can use `she` from anywhere in Command Prompt.
 ```bash
-build.bat
+she
 ```
 
-Creates `she.exe` with optimizations.
-
-### Creating a Distribution Package
-
+### Step 1: Run
 ```bash
-create-distribution.bat
-```
-
-or (PowerShell):
-
-```powershell
-.\create-distribution.ps1
-```
-
-This packages everything needed for users:
-- Compiled executable
-- Installation scripts
-- Documentation
-- Example files
-
-### Project Structure
-
-```
-├── Lexer.h/cpp              # Tokenization
-├── Parser.h/cpp             # Syntax Analysis
-├── Interpreter.h/cpp        # Execution
-├── AST.h                    # Abstract Syntax Tree
-├── main.cpp                 # Entry Point
-│
-├── build.bat                # Compilation
-├── install.bat              # User Installer
-├── create-distribution.bat  # Package Creator
-│
-├── examples/                # Sample Programs
-└── GETTING_STARTED.md       # User Guide
-```
-
-### File Format
-
-She++ programs use the `.she` extension:
-
-```she
-ExecutionInitializer [
-    number x = 10
-    number y = 20
-    number z = x + y
-    
-    display[z]
-]
+she <filename.she> or she <filename>
 ```
 
 ---
 
-## 🎯 Features
+## Setup Guide
 
-- ✅ **Variables**: `number x = 42`
-- ✅ **Arithmetic**: `+`, `-`, `*`, `/`
-- ✅ **Output**: `display[value]`
-- ✅ **Clean Syntax**: Readable and intuitive
+**Want to set it up?** See [SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for installation and setup instructions.
+
 
 ---
 
-## 📦 Distribution
+## Features
 
-For complete distribution instructions, see [DISTRIBUTION.md](DISTRIBUTION.md)
-
-**Quick Packaging:**
-1. Run `create-distribution.bat`
-2. Zip the `dist/` folder
-3. Share with users
-4. Users run `install.bat`
+- Simple variable handling
+- Basic arithmetic operations
+- Display/output support
+- Clean, readable syntax
+- Cross-platform compatible
 
 ---
 
-## 📚 Documentation
+## License
 
-- [User Guide](GETTING_STARTED.md) - How to use She++
-- [Distribution Guide](DISTRIBUTION.md) - Package for others
-- [Examples](examples/) - Sample programs
+This project is open source. Feel free to use, modify, and share.
 
 ---
 
-## 🚀 Installation (Users)
+## Questions?
 
-See [GETTING_STARTED.md](GETTING_STARTED.md) 
+Check the documentation or look at the examples folder. Most answers are there!
