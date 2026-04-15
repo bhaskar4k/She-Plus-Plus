@@ -7,24 +7,49 @@
 #include "Parser.h"
 #include "Interpreter.h"
 
+using namespace std;
+
+
+bool HasSheExtension(const std::string& filename) {
+    return filename.size() >= 4 &&
+           filename.substr(filename.size() - 4) == ".she";
+}
+
+
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        std::cout << "Usage: shepp <file.shepp>\n";
+        cout << "Usage: she <file.she>\n";
         return 1;
     }
 
-    std::ifstream file(argv[1]);
+    string filename = argv[1];
+
+    // Step 1: Auto-append .she if missing
+    if (filename.find('.') == string::npos) {
+        filename += ".she";
+    }
+
+    // Step 2: Validate extension
+    if (!HasSheExtension(filename)) {
+        cerr << "Error: Only .she files are supported\n";
+        return 1;
+    }
+
+    // Step 3: Open file
+    ifstream file(filename);
     if (!file) {
-        std::cerr << "Cannot open file\n";
+        cerr << "Cannot open file: " << filename << "\n";
         return 1;
     }
 
-    std::stringstream buffer;
+    // Step 4: Read file
+    stringstream buffer;
     buffer << file.rdbuf();
-    std::string code = buffer.str();
+    string code = buffer.str();
 
+    // Step 5: Lexing
     Lexer lexer(code);
-    std::vector<Token> tokens;
+    vector<Token> tokens;
 
     while (true) {
         Token t = lexer.nextToken();
@@ -32,10 +57,13 @@ int main(int argc, char* argv[]) {
         if (t.type == TokenType::END) break;
     }
 
+    // Step 6: Parsing
     Parser parser(tokens);
     Interpreter interpreter;
 
     auto program = parser.parseProgram();
+
+    // Step 7: Execution
     interpreter.exec(program);
 
     return 0;
