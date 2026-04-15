@@ -1,6 +1,9 @@
-# She++ Programming Language
+# She++ Programming Language 
 
-A simple, friendly programming language created to make coding easier and more intuitive.
+---
+
+<h4>If something is missing in your life, it's probably because you're not using She++.</h4>
+<h4>When She doesn't understand you, then She++ does. 🙂‍↕️</h4>
 
 ---
 
