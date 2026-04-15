@@ -26,6 +26,16 @@ Token Lexer::nextToken() {
         return {TokenType::NUMBER, num};
     }
 
+    if (c == '"') {
+        advance(); // skip opening quote
+        std::string str;
+        while (peek() != '"' && peek() != '\0') {
+            str += advance();
+        }
+        advance(); // skip closing quote
+        return {TokenType::STRING, str};
+    }
+
     if (isalpha(c)) {
         std::string id;
         while (isalnum(peek())) id += advance();
@@ -39,6 +49,9 @@ Token Lexer::nextToken() {
 
     switch (advance()) {
         case '+': return {TokenType::PLUS, "+"};
+        case '-': return {TokenType::MINUS, "-"};
+        case '*': return {TokenType::TIMES, "*"};
+        case '/': return {TokenType::DIVIDE, "/"};
         case '=': return {TokenType::EQUAL, "="};
         case '[': return {TokenType::LBRACKET, "["};
         case ']': return {TokenType::RBRACKET, "]"};

@@ -1,13 +1,14 @@
 #pragma once
 #include <unordered_map>
 #include <vector>
+#include <string>
 #include "AST.h"
 
 class Interpreter {
 private:
-    std::unordered_map<std::string, long long> vars;
+    std::unordered_map<std::string, std::string> vars; // Store as strings
 
 public:
-    long long eval(Expr* expr);
+    std::string eval(Expr* expr);
     void exec(const std::vector<Stmt*>& stmts);
 };

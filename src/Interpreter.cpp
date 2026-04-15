@@ -1,17 +1,32 @@
 #include "../include/Interpreter.h"
 #include <iostream>
 #include <stdexcept>
+#include <string>
 using namespace std;
 
-long long Interpreter::eval(Expr* expr) {
+std::string Interpreter::eval(Expr* expr) {
     if (auto num = dynamic_cast<NumberExpr*>(expr))
-        return stoll(num->value);
+        return num->value;
+
+    if (auto str = dynamic_cast<StringExpr*>(expr))
+        return str->value;
 
     if (auto var = dynamic_cast<VariableExpr*>(expr))
         return vars[var->name];
 
-    if (auto bin = dynamic_cast<BinaryExpr*>(expr))
-        return eval(bin->left) + eval(bin->right);
+    if (auto bin = dynamic_cast<BinaryExpr*>(expr)) {
+        long long left = stoll(eval(bin->left));
+        long long right = stoll(eval(bin->right));
+        long long result;
+        
+        if (bin->op == '+') result = left + right;
+        else if (bin->op == '-') result = left - right;
+        else if (bin->op == '*') result = left * right;
+        else if (bin->op == '/') result = left / right;
+        else throw runtime_error("Unknown operator");
+        
+        return to_string(result);
+    }
 
     throw runtime_error("Eval error");
 }

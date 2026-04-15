@@ -14,6 +14,11 @@ struct NumberExpr : Expr {
     NumberExpr(std::string v) : value(v) {}
 };
 
+struct StringExpr : Expr {
+    std::string value;
+    StringExpr(std::string v) : value(v) {}
+};
+
 struct VariableExpr : Expr {
     std::string name;
     VariableExpr(std::string n) : name(n) {}
@@ -22,7 +27,8 @@ struct VariableExpr : Expr {
 struct BinaryExpr : Expr {
     Expr* left;
     Expr* right;
-    BinaryExpr(Expr* l, Expr* r) : left(l), right(r) {}
+    char op; // '+', '-', '*', '/'
+    BinaryExpr(Expr* l, Expr* r, char o) : left(l), right(r), op(o) {}
 };
 
 struct Stmt {

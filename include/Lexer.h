@@ -8,8 +8,12 @@ enum class TokenType {
 
     IDENTIFIER,
     NUMBER,
+    STRING,
 
     PLUS,
+    MINUS,
+    TIMES,
+    DIVIDE,
     EQUAL,
 
     LBRACKET,

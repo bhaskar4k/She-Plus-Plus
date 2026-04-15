@@ -15,6 +15,7 @@ public:
     Parser(const std::vector<Token>& t);
 
     Expr* parseExpression();
+    Expr* parseTerm();
     Expr* parsePrimary();
     Stmt* parseStatement();
     std::vector<Stmt*> parseProgram();

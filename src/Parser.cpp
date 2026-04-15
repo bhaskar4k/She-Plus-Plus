@@ -17,19 +17,34 @@ Expr* Parser::parsePrimary() {
     if (t.type == TokenType::NUMBER)
         return new NumberExpr(t.value);
 
+    if (t.type == TokenType::STRING)
+        return new StringExpr(t.value);
+
     if (t.type == TokenType::IDENTIFIER)
         return new VariableExpr(t.value);
 
     throw std::runtime_error("Invalid expression");
 }
 
-Expr* Parser::parseExpression() {
+Expr* Parser::parseTerm() {
     Expr* left = parsePrimary();
 
-    while (peek().type == TokenType::PLUS) {
-        advance();
+    while (peek().type == TokenType::TIMES || peek().type == TokenType::DIVIDE) {
+        Token op = advance();
         Expr* right = parsePrimary();
-        left = new BinaryExpr(left, right);
+        left = new BinaryExpr(left, right, op.type == TokenType::TIMES ? '*' : '/');
+    }
+
+    return left;
+}
+
+Expr* Parser::parseExpression() {
+    Expr* left = parseTerm();
+
+    while (peek().type == TokenType::PLUS || peek().type == TokenType::MINUS) {
+        Token op = advance();
+        Expr* right = parseTerm();
+        left = new BinaryExpr(left, right, op.type == TokenType::PLUS ? '+' : '-');
     }
 
     return left;
