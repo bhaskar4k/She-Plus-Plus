@@ -1,4 +1,6 @@
 *.exe
-/examples
-examples/
+/dist
+/dist/
+dist/
+dist/*
 *.she

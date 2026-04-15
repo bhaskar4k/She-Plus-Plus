@@ -8,9 +8,12 @@ echo  She++ Distribution Package Creator
 echo ========================================
 echo.
 
+REM Change to project root directory
+cd /d "%~dp0.."
+
 REM Build the project
 echo Building She++ compiler...
-call build.bat
+call scripts\build.bat
 if %errorLevel% neq 0 (
     echo Error: Build failed.
     pause
@@ -28,15 +31,13 @@ echo Creating distribution package...
 mkdir dist
 
 REM Copy executables and scripts
-copy ..\bin\she.exe dist\she.exe
-copy install.bat dist\install.bat
-copy uninstall.bat dist\uninstall.bat
-copy install-ps.ps1 dist\install-ps.ps1
-copy uninstall-ps.ps1 dist\uninstall-ps.ps1
+copy bin\she.exe dist\she.exe
+copy scripts\install.bat dist\install.bat
+copy scripts\uninstall.bat dist\uninstall.bat
 
 REM Copy documentation
-copy ..\docs\GETTING_STARTED.md dist\GETTING_STARTED.md
-copy ..\docs\README.md dist\README.md
+copy README.md dist\README.md
+copy docs\SETUP_GUIDE.md dist\SETUP_GUIDE.md
 
 echo.
 echo ========================================
@@ -48,11 +49,9 @@ echo.
 echo Contents:
 echo   - she.exe (Compiled interpreter)
 echo   - install.bat (Windows installer)
-echo   - install-ps.ps1 (PowerShell installer)
 echo   - uninstall.bat (Windows uninstaller)
-echo   - uninstall-ps.ps1 (PowerShell uninstaller)
-echo   - GETTING_STARTED.md (User guide)
 echo   - README.md (Project overview)
+echo   - SETUP_GUIDE.md (Setup instructions)
 echo.
 echo Next Steps:
 echo   1. Zip the dist folder: "She++-v1.0.zip"
