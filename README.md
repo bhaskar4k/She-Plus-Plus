@@ -2,8 +2,8 @@
 
 ---
 
-<h4>If something is missing in your life, it's probably because you're not using She++.</h4>
-<h4>When She doesn't understand you, then She++ does. 🙂‍↕️</h4>
+<h3>If something is missing in your life, it's probably because you're not using She++.</h3>
+<h3>When She doesn't understand you, then She++ does. 😃</h3>
 
 ---
 
