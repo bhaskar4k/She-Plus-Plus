@@ -10,10 +10,9 @@ Welcome to She++! A language that really understands you.
    - Build the She++ compiler
    - Install it to `C:\Program Files\She++`
    - Add it to your system PATH
-   - Create example files
 
 3. Close and reopen your Command Prompt or PowerShell
-4. Test the installation: `she examples\hello.she`
+4. Test the installation: Create a `.she` file and run it
 
 ### Uninstalling
 Right-click `uninstall.bat` and select **Run as administrator**
@@ -86,10 +85,6 @@ she math.she
 ### Build failed
 - Ensure you have a C++ compiler installed (MinGW or MSVC)
 - Check that `build.bat` runs successfully
-
-## Example Files
-
-Check the `examples` directory for more sample She++ programs.
 
 ## Support
 

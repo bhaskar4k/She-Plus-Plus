@@ -35,11 +35,7 @@ she yourfile
 
 ### Example Programs
 
-Check the `examples/` folder for sample She++ programs:
-- `01_hello.she` - Hello World
-- `02_arithmetic.she` - Basic Math
-- `03_calculations.she` - Multiple Calculations
-- `04_circle_area.she` - Area Calculation
+Check the examples in the documentation. Users can create their own programs by following the guides.
 
 ---
 

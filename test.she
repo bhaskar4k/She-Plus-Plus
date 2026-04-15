@@ -1,7 +1,0 @@
-ExecutionInitializer [
-    number x = 10
-    number y = 20
-    number z = x + y
-
-    display[z] 
-]

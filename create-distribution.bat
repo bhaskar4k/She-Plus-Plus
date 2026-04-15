@@ -26,7 +26,6 @@ if exist "dist" (
 REM Create distribution folder structure
 echo Creating distribution package...
 mkdir dist
-mkdir dist\examples
 
 REM Copy executables and scripts
 copy she.exe dist\she.exe
@@ -38,9 +37,6 @@ copy uninstall-ps.ps1 dist\uninstall-ps.ps1
 REM Copy documentation
 copy GETTING_STARTED.md dist\GETTING_STARTED.md
 copy README.md dist\README.md
-
-REM Copy examples
-for %%F in (examples\*.she) do copy %%F dist\examples\%%~nxF
 
 echo.
 echo ========================================
@@ -57,7 +53,6 @@ echo   - uninstall.bat (Windows uninstaller)
 echo   - uninstall-ps.ps1 (PowerShell uninstaller)
 echo   - GETTING_STARTED.md (User guide)
 echo   - README.md (Project overview)
-echo   - examples\ (Example She++ programs)
 echo.
 echo Next Steps:
 echo   1. Zip the dist folder: "She++-v1.0.zip"

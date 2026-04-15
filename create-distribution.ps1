@@ -25,7 +25,6 @@ if (Test-Path "dist") {
 # Create distribution folder structure
 Write-Host "Creating distribution package..." -ForegroundColor Cyan
 New-Item -ItemType Directory -Path "dist" | Out-Null
-New-Item -ItemType Directory -Path "dist\examples" | Out-Null
 
 # Copy executables and scripts
 Copy-Item "she.exe" "dist\she.exe"
@@ -37,11 +36,6 @@ Copy-Item "uninstall-ps.ps1" "dist\uninstall-ps.ps1"
 # Copy documentation
 Copy-Item "GETTING_STARTED.md" "dist\GETTING_STARTED.md"
 Copy-Item "README.md" "dist\README.md"
-
-# Copy examples
-Get-ChildItem "examples\*.she" | ForEach-Object {
-    Copy-Item $_ "dist\examples\$($_.Name)"
-}
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Green
@@ -58,7 +52,6 @@ Write-Host "  - uninstall.bat (Windows uninstaller)" -ForegroundColor White
 Write-Host "  - uninstall-ps.ps1 (PowerShell uninstaller)" -ForegroundColor White
 Write-Host "  - GETTING_STARTED.md (User guide)" -ForegroundColor White
 Write-Host "  - README.md (Project overview)" -ForegroundColor White
-Write-Host "  - examples\ (Example She++ programs)" -ForegroundColor White
 Write-Host ""
 Write-Host "Next Steps:" -ForegroundColor Yellow
 Write-Host "  1. Zip the dist folder: 'She++-v1.0.zip'" -ForegroundColor White

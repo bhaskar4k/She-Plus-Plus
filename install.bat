@@ -64,19 +64,6 @@ if %errorLevel% equ 0 (
     echo Added She++ to PATH successfully.
 )
 
-REM Create example file
-echo.
-echo Creating example She++ file...
-if not exist "examples" mkdir examples
-if not exist "examples\hello.she" (
-    (
-        echo ExecutionInitializer [
-        echo     display["Hello from She++"^]
-        echo ]
-    ) > "examples\hello.she"
-    echo Created: examples\hello.she
-)
-
 echo.
 echo ========================================
 echo     Installation Complete!
@@ -85,7 +72,7 @@ echo.
 echo To start using She++, open a new Command Prompt and run:
 echo     she yourfile.she
 echo.
-echo Example:
-echo     she examples\hello.she
+echo Create a .she file and compile it:
+echo     she myprogram.she
 echo.
 pause

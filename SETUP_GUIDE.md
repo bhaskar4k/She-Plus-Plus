@@ -24,12 +24,6 @@ Your She++ project is now completely wrapped and ready to distribute as a real p
 - **DISTRIBUTION.md** - Developer guide for distribution
 - **SETUP_GUIDE.md** - This file!
 
-### Examples
-- **examples/01_hello.she** - Hello World program
-- **examples/02_arithmetic.she** - Basic math
-- **examples/03_calculations.she** - Multiple operations
-- **examples/04_circle_area.she** - Practical example
-
 ---
 
 ## 🎯 How It Works
@@ -70,8 +64,15 @@ create-distribution.bat
 This creates a `dist` folder with everything needed.
 
 ### Step 4: Test the Package
+Create a test file `test.she`:
+```she
+ExecutionInitializer [
+    display["Test successful!"^]
+]
+```
+Then run:
 ```bash
-dist\she.exe examples\01_hello.she
+dist\she.exe test.she
 ```
 
 ### Step 5: Share with Users
@@ -152,12 +153,7 @@ dist/
 ├── install-ps.ps1           ← PowerShell alternative
 ├── uninstall-ps.ps1         ← PowerShell alternative
 ├── README.md                ← Project info
-├── GETTING_STARTED.md       ← User guide
-└── examples/                ← Sample programs
-    ├── 01_hello.she
-    ├── 02_arithmetic.she
-    ├── 03_calculations.she
-    └── 04_circle_area.she
+└── GETTING_STARTED.md       ← User guide
 ```
 
 ---

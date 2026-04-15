@@ -21,7 +21,7 @@ She++/
 ├── DISTRIBUTION.md            (This file)
 ├── README.md                  (Project overview)
 │
-├── examples/                  (User example files)
+├── examples/                  (User example files - optional)
 │   ├── 01_hello.she
 │   ├── 02_arithmetic.she
 │   ├── 03_calculations.she

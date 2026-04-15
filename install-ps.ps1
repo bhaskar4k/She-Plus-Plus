@@ -57,22 +57,6 @@ if ($CurrentPath -notlike "*$INSTALL_DIR*") {
     Write-Host "She++ is already in PATH." -ForegroundColor Yellow
 }
 
-# Create example file
-Write-Host ""
-Write-Host "Creating example She++ file..." -ForegroundColor Cyan
-if (-not (Test-Path "examples")) {
-    New-Item -ItemType Directory -Path "examples" -Force | Out-Null
-}
-
-if (-not (Test-Path "examples\hello.she")) {
-    @"
-ExecutionInitializer [
-    display["Hello from She++"]
-]
-"@ | Out-File -FilePath "examples\hello.she" -Encoding UTF8
-    Write-Host "Created: examples\hello.she" -ForegroundColor Green
-}
-
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "     Installation Complete!" -ForegroundColor Cyan
@@ -81,7 +65,7 @@ Write-Host ""
 Write-Host "To start using She++, open a new PowerShell/CMD and run:" -ForegroundColor Green
 Write-Host "    she yourfile.she" -ForegroundColor White
 Write-Host ""
-Write-Host "Example:" -ForegroundColor Green
-Write-Host "    she examples\hello.she" -ForegroundColor White
+Write-Host "Create a .she file and compile it:" -ForegroundColor Green
+Write-Host "    she myprogram.she" -ForegroundColor White
 Write-Host ""
 Read-Host "Press Enter to exit"
