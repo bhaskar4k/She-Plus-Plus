@@ -30,6 +30,53 @@ she <filename.she> or she <filename>
 
 ---
 
+## Syntax
+
+```bash
+ExecutionInitializer [
+    display["Hello World!"]
+
+    number x = 10
+    number y = 200
+    number z = x + y
+    number w = x - y
+    number v = x * y
+    number u = x / y
+    number result = 2 + 3 * 4
+
+    
+    display[2]
+    
+    display[x]
+    display[y]
+    display[z]
+    display[w]
+    display[v]
+    display[u]
+    
+    display[result]
+]
+```
+
+---
+
+## Output
+
+```bash
+E:\Project\Test>she Test
+Hello World!
+2
+10
+200
+210
+-190
+2000
+0
+14
+```
+
+---
+
 ## Setup Guide
 
 **Want to set it up?** See [SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for installation and setup instructions.
