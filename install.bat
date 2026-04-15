@@ -1,7 +1,4 @@
 @echo off
-REM She++ Language Installer for Windows
-REM This script installs She++ to your system and adds it to PATH
-
 setlocal enabledelayedexpansion
 
 echo.
@@ -19,60 +16,73 @@ if %errorLevel% neq 0 (
     exit /b 1
 )
 
-REM Define installation directory
+echo [1/3] Checking installation directory...
 set "INSTALL_DIR=C:\Program Files\She++"
+set "SCRIPT_DIR=%~dp0"
 
-REM Create installation directory
 if not exist "%INSTALL_DIR%" (
     mkdir "%INSTALL_DIR%"
-    echo Created installation directory: %INSTALL_DIR%
+    echo [OK] Created: %INSTALL_DIR%
 ) else (
-    echo Installation directory already exists: %INSTALL_DIR%
+    echo [OK] Directory exists: %INSTALL_DIR%
 )
 
-REM Build the project
 echo.
-echo Building She++ compiler...
+echo [2/3] Building She++ compiler...
+cd /d "%SCRIPT_DIR%"
+if %errorLevel% neq 0 (
+    echo [ERROR] Failed to access installation files
+    pause
+    exit /b 1
+)
+
 call build.bat
 if %errorLevel% neq 0 (
-    echo Error: Build failed. Please check your C++ compiler setup.
+    echo [ERROR] Build failed. Check if C++ compiler is installed.
     pause
     exit /b 1
 )
+echo [OK] Build successful
 
-REM Copy executable
-if exist "she.exe" (
-    copy "she.exe" "%INSTALL_DIR%\she.exe" >nul
-    echo Copied She++ executable to %INSTALL_DIR%
-) else (
-    echo Error: she.exe not found. Build may have failed.
-    pause
-    exit /b 1
-)
-
-REM Add to PATH if not already there
 echo.
-echo Adding She++ to system PATH...
-
-for /f "skip=2 tokens=3*" %%A in ('reg query HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment /v Path') do set "CURRENT_PATH=%%A %%B"
-
-echo %CURRENT_PATH% | find /I "%INSTALL_DIR%" >nul
-if %errorLevel% equ 0 (
-    echo She++ is already in PATH.
-) else (
-    setx /M Path "%CURRENT_PATH%;%INSTALL_DIR%"
-    echo Added She++ to PATH successfully.
+echo [3/3] Copying executable...
+if not exist "%SCRIPT_DIR%she.exe" (
+    echo [ERROR] she.exe not found
+    pause
+    exit /b 1
 )
+
+copy /Y "%SCRIPT_DIR%she.exe" "%INSTALL_DIR%\she.exe"
+if %errorLevel% neq 0 (
+    echo [ERROR] Failed to copy she.exe
+    pause
+    exit /b 1
+)
+echo [OK] Copied to %INSTALL_DIR%\she.exe
 
 echo.
 echo ========================================
 echo     Installation Complete!
 echo ========================================
 echo.
-echo To start using She++, open a new Command Prompt and run:
-echo     she yourfile.she
+echo She++ installed at: %INSTALL_DIR%\she.exe
 echo.
-echo Create a .she file and compile it:
-echo     she myprogram.she
+echo NEXT STEP: Add to PATH manually
+echo ========================================
+echo.
+echo To use 'she' command from anywhere, add to PATH:
+echo.
+echo 1. Press Windows Key
+echo 2. Type: environment variables
+echo 3. Click: "Edit the system environment variables"
+echo 4. Click: "Environment Variables..." button
+echo 5. Under "System variables", click "Path"
+echo 6. Click: "New"
+echo 7. Paste: %INSTALL_DIR%
+echo 8. Click: OK on all windows
+echo 9. Close and reopen Command Prompt
+echo.
+echo Then you can use:
+echo    she yourfile.she
 echo.
 pause
