@@ -17,13 +17,18 @@ She++ is a programming language with clean, easy-to-read syntax. Perfect for beg
 install.bat
 ```
 
-### Step 2: Check Installation
+### Step 2: Add Environment Variable
+```bash
+Add Path at envionment variable - C:\Program Files\She++
+```
+
+### Step 3: Check Installation
 Then you can use `she` from anywhere in Command Prompt.
 ```bash
 she
 ```
 
-### Step 1: Run
+### Step 4: Run
 ```bash
 she <filename.she> or she <filename>
 ```
@@ -90,7 +95,6 @@ Hello World!
 - Basic arithmetic operations
 - Display/output support
 - Clean, readable syntax
-- Cross-platform compatible
 
 ---
 
