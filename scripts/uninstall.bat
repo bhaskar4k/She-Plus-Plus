@@ -17,21 +17,12 @@ if %errorLevel% neq 0 (
 
 set "INSTALL_DIR=C:\Program Files\She++"
 
-REM Remove from PATH
-echo Removing She++ from PATH...
-for /f "skip=2 tokens=3*" %%A in ('reg query HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment /v Path') do set "CURRENT_PATH=%%A %%B"
-
-setlocal enabledelayedexpansion
-set "NEW_PATH=!CURRENT_PATH:%INSTALL_DIR%;=!"
-if not "!NEW_PATH!"=="!CURRENT_PATH!" (
-    setx /M Path "!NEW_PATH!"
-    echo Removed She++ from PATH.
-)
-
 REM Remove installation directory
 if exist "%INSTALL_DIR%" (
     rmdir /s /q "%INSTALL_DIR%"
     echo Removed installation directory: %INSTALL_DIR%
+) else (
+    echo She++ is not installed at %INSTALL_DIR%
 )
 
 echo.
