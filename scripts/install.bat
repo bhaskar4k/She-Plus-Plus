@@ -2,9 +2,9 @@
 setlocal enabledelayedexpansion
 
 echo.
-echo ========================================
+echo ====================================================
 echo     She++ Language Installer
-echo ========================================
+echo ====================================================
 echo.
 
 REM Check if running as administrator
@@ -61,14 +61,14 @@ if %errorLevel% neq 0 (
 echo [OK] Copied to %INSTALL_DIR%\she.exe
 
 echo.
-echo ========================================
+echo ====================================================
 echo     Installation Complete!
-echo ========================================
+echo ====================================================
 echo.
 echo She++ installed at: %INSTALL_DIR%\she.exe
 echo.
-echo NEXT STEP: Add to PATH
-echo ========================================
+echo NEXT STEP: Add to PATH (You've to do this manually)
+echo ====================================================
 echo.
 echo To use 'she' command from anywhere, add to PATH:
 echo.
