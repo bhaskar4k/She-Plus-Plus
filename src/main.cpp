@@ -18,7 +18,15 @@ bool HasSheExtension(const std::string& filename) {
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        cout << "Version : v1.0\nUsage: she <filename.she> or she <filename>\n";
+        cout << "\nFrom the developer (-_-)\n"
+             << "==============================\n"
+             << "If something is missing in your life, it's probably because you're not using She++.\n"
+             << "When She doesn't understand you, then She++ does. :)\n"
+             << "==============================\n"
+             << "\n"
+             << "Version : v1.0\n"
+             << "Usage : she <filename.she> or she <filename>\n"
+             << "Connect With Dev : https://github.com/bhaskar4k\n";
         return 1;
     }
 
