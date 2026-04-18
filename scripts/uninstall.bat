@@ -28,5 +28,6 @@ if exist "%INSTALL_DIR%" (
 echo.
 echo Uninstall complete!
 echo She++ has been removed from your system.
+echo She will miss you :)
 echo.
 pause
